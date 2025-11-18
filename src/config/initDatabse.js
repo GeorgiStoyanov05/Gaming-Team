@@ -4,7 +4,8 @@ async function initDatabase(app){
 
 mongoose.set('strictQuery', false);
 
-await mongoose.connect('mongodb+srv://gogotobg2:4lpyRpzpISMbquyO@jsbackend.4jxw52c.mongodb.net/gaming');
+require("dotenv").config();
+await mongoose.connect(process.env.MONGO_URI);
 
 console.log("DB connected");
 
